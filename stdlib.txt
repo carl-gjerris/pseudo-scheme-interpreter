@@ -1,0 +1,4 @@
+(def (last x) (if (= (cdr x) ()) (car x) (last (cdr x))))
+(def (and a b) (= (= a true) (= b true)))
+(def (or a b) (if a true (if b true false)))
+(def (cond es) (if (= es ()) () (if (eval (caar es)) (eval (cadr (car es))) (cond (cdr es)))))
